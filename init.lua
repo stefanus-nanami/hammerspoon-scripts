@@ -1,8 +1,10 @@
 -- My hammerspoon init script.
 
--- Center focused window.
-hs.hotkey.bind({ "cmd", "alt", "shift", "ctrl" }, "F12", function()
-    local scr = hs.screen.primaryScreen()
-    local w = hs.window.focusedWindow()
-    w:centerOnScreen(scr, true)
-end)
+-- Window operations
+local window_op = require "windowOperations"
+
+window_op:centerWindowHotKey()
+window_op:snapTopLeft(5, 5)
+window_op:snapTopRight(5, 5)
+window_op:snapBottomLeft(5, 5)
+window_op:snapBottomRight(5, 5)
